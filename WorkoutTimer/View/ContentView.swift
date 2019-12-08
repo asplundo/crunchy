@@ -6,21 +6,20 @@ import SwiftUI
 
 struct ContentView: View {
     
-    @ObservedObject var settings = TimerSettings(sets: 5, duration: 30)
+    @ObservedObject var settings = TimerSettings()
+    @State private var displaySettings = false
     
     var body: some View {
         NavigationView {
             VStack {
                 TimerView(settings: settings)
-                    .frame(width: 300, height: 300, alignment: .center)
-                    .transition(.slide)
+                    .frame(width: UIScreen.main.bounds.width * 0.65, height: UIScreen.main.bounds.width * 0.65, alignment: .center)
+                Spacer()
+                CardView(settings: settings)
                 Spacer()
                 if settings.state == .idle {
-                    Group {
-                        SettingsView(settings: settings)
-                        Button("Start") {
-                            self.settings.getReady()
-                        }
+                    Button("Start") {
+                        self.settings.getReady()
                     }
                 } else {
                     Button("Reset") {
@@ -29,7 +28,13 @@ struct ContentView: View {
                 }
             }
             .padding()
+            .sheet(isPresented: $displaySettings) {
+                SettingsView(settings: self.settings)
+            }
             .navigationBarTitle("CrunchY")
+            .navigationBarItems(trailing: Button("Settings") {
+                self.displaySettings = true
+            })
         }
     }
 }

@@ -18,25 +18,13 @@ struct TimerView: View {
                 .stroke(Color.blue, lineWidth: 20)
                 .rotationEffect(Angle(degrees:-90))
                 .animation(.linear)
-            Text(textForState)
-                .animation(.interactiveSpring())
+            Text(timeString)
+                .font(.largeTitle)
         }
     }
-    
-    var textForState: String {
-        switch settings.state {
-        case .getReady:
-            return "Get ready..."
-        case .running, .idle:
-            return timeString
-        case .finished:
-            return "Great job!"
-        }
-    }
-    
+            
     var progress: CGFloat {
-        let diff = Float(settings.countDown) / Float(settings.duration)
-        return  CGFloat(1 - diff)
+        return CGFloat(Float(settings.countDown) / Float(settings.duration))
     }
     
     var timeString: String {
@@ -49,6 +37,6 @@ struct TimerView: View {
 
 struct TimerView_Previews: PreviewProvider {
     static var previews: some View {
-        TimerView(settings: TimerSettings(sets: 5, duration: 5))
+        TimerView(settings: TimerSettings())
     }
 }

@@ -15,25 +15,24 @@ class TimerSettings: ObservableObject {
     }
     
     @Published var state: State = .idle
-    @Published var sets: Int
-    @Published var duration: Int {
+    @Published var sets: Int = 6
+    @Published var duration: Int = 30 {
         didSet {
             countDown = duration
         }
     }
     @Published var complete = false
     @Published var countDown = 0
+    @Published var getReadyTime = 3.0
     var count = 0
     var timer: Timer?
-    
-    init(sets: Int, duration: Int) {
-        self.sets = sets
-        self.duration = duration
+        
+    init() {
         self.countDown = duration
     }
     
     func getReady() {
-        setTimer(with: 2.0, selector: #selector(start), repeats: false)
+        setTimer(with: getReadyTime, selector: #selector(start), repeats: false)
         state = .getReady
         
     }
