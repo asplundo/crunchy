@@ -15,13 +15,22 @@ struct ContentView: View {
                 TimerView(settings: settings)
                     .frame(width: UIScreen.main.bounds.width * 0.65, height: UIScreen.main.bounds.width * 0.65, alignment: .center)
                 Spacer()
-                CardView(settings: settings)
-                Spacer()
                 if settings.state == .idle {
+                    CardView(settings: settings)
+                        .animation(.default)
+                        .transition(.slide)
+                    Spacer()
                     Button("Start") {
                         self.settings.getReady()
                     }
                 } else {
+                    if settings.state == .getReady {
+                        Text("GET READY...")
+                            .font(.largeTitle)
+                            .animation(.default)
+                            .transition(.slide)
+                        Spacer()
+                    }
                     Button("Reset") {
                         self.settings.reset()
                     }
