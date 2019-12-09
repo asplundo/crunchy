@@ -20,8 +20,9 @@ struct ContentView: View {
                         .animation(.default)
                         .transition(.slide)
                     Spacer()
-                    Button("Start") {
-                        self.settings.getReady()
+                    Button(action: { self.settings.getReady() }) {
+                        Text("Start")
+                        .rounded()
                     }
                 } else {
                     if settings.state == .getReady {
@@ -31,8 +32,9 @@ struct ContentView: View {
                             .transition(.slide)
                         Spacer()
                     }
-                    Button("Reset") {
-                        self.settings.reset()
+                    Button(action: { self.settings.reset() }) {
+                        Text("Reset")
+                        .rounded()
                     }
                 }
             }

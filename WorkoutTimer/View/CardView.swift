@@ -9,7 +9,7 @@ struct CardView: View {
     @ObservedObject var settings: TimerSettings
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             Group {
                 Text("\(settings.sets) sets")
                 Text("\(settings.duration) seconds each set")

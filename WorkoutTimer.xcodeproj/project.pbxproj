@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1072CADD239DB4FF005D9BF9 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072CADC239DB4FF005D9BF9 /* CardView.swift */; };
+		1072CAE0239E6FD2005D9BF9 /* RoundedButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1072CADF239E6FD2005D9BF9 /* RoundedButtonStyle.swift */; };
 		10866086239AE25E00CF3501 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10866085239AE25E00CF3501 /* AppDelegate.swift */; };
 		10866088239AE25E00CF3501 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10866087239AE25E00CF3501 /* SceneDelegate.swift */; };
 		1086608A239AE25E00CF3501 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10866089239AE25E00CF3501 /* ContentView.swift */; };
@@ -25,6 +26,7 @@
 
 /* Begin PBXFileReference section */
 		1072CADC239DB4FF005D9BF9 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		1072CADF239E6FD2005D9BF9 /* RoundedButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoundedButtonStyle.swift; sourceTree = "<group>"; };
 		10866082239AE25E00CF3501 /* WorkoutTimer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WorkoutTimer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		10866085239AE25E00CF3501 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		10866087239AE25E00CF3501 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +55,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1072CADE239E6FB7005D9BF9 /* ViewModifier */ = {
+			isa = PBXGroup;
+			children = (
+				1072CADF239E6FD2005D9BF9 /* RoundedButtonStyle.swift */,
+			);
+			path = ViewModifier;
+			sourceTree = "<group>";
+		};
 		10866079239AE25E00CF3501 = {
 			isa = PBXGroup;
 			children = (
@@ -72,6 +82,7 @@
 		10866084239AE25E00CF3501 /* WorkoutTimer */ = {
 			isa = PBXGroup;
 			children = (
+				1072CADE239E6FB7005D9BF9 /* ViewModifier */,
 				108660A6239D2B6700CF3501 /* View */,
 				108660A1239D2B1800CF3501 /* sound */,
 				10866085239AE25E00CF3501 /* AppDelegate.swift */,
@@ -196,6 +207,7 @@
 				1086609A239AE60F00CF3501 /* TimerView.swift in Sources */,
 				1086608A239AE25E00CF3501 /* ContentView.swift in Sources */,
 				1072CADD239DB4FF005D9BF9 /* CardView.swift in Sources */,
+				1072CAE0239E6FD2005D9BF9 /* RoundedButtonStyle.swift in Sources */,
 				108660A0239D28CC00CF3501 /* AudioPlayer.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
